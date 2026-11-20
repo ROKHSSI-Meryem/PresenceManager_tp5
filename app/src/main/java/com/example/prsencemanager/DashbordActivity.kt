@@ -1,4 +1,4 @@
-
+﻿
 package com.example.prsencemanager
 
 import android.content.Intent
@@ -50,7 +50,7 @@ class DashboardActivity : AppCompatActivity() {
                 R.id.action_afficher -> {
                     AlertDialog.Builder(this@DashboardActivity)
                         .setTitle("CAB")
-                        .setMessage("Action Afficher exécutée.")
+                        .setMessage("Action Afficher exÃ©cutÃ©e.")
                         .setPositiveButton("OK", null)
                         .show()
 
@@ -75,13 +75,13 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        // Récupération des cartes
+        // RÃ©cupÃ©ration des cartes
         val cardGroupes = findViewById<View>(R.id.cardGroupes)
         val cardAppel = findViewById<View>(R.id.cardAppel)
         val cardHistorique = findViewById<View>(R.id.cardHistorique)
         val cardStatistiques = findViewById<View>(R.id.cardStatistiques)
 
-        // Étape 5 : clic simple
+        // Ã‰tape 5 : clic simple
         cardGroupes.setOnClickListener {
             startActivity(Intent(this, GroupesActivity::class.java))
         }
@@ -98,11 +98,11 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, StatistiquesActivity::class.java))
         }
 
-        // Étape 6 : appui long
+        // Ã‰tape 6 : appui long
         cardGroupes.setOnLongClickListener {
             Toast.makeText(
                 this,
-                "Groupes : sélectionner ou consulter les groupes",
+                "Groupes : sÃ©lectionner ou consulter les groupes",
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -112,7 +112,7 @@ class DashboardActivity : AppCompatActivity() {
         cardAppel.setOnLongClickListener {
             Toast.makeText(
                 this,
-                "Faire l'appel : démarrer une séance",
+                "Faire l'appel : dÃ©marrer une sÃ©ance",
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -152,7 +152,7 @@ class DashboardActivity : AppCompatActivity() {
 
                     R.id.action_informations -> {
                         AlertDialog.Builder(this)
-                            .setTitle("PrésenceManager")
+                            .setTitle("PrÃ©senceManager")
                             .setMessage(
                                 "Menu contextuel flottant du tableau de bord."
                             )
@@ -169,7 +169,7 @@ class DashboardActivity : AppCompatActivity() {
             popupMenu.show()
         }
 
-        // Étape 7 : double-clic sur imgProfil
+        // Ã‰tape 7 : double-clic sur imgProfil
         val imgProfil = findViewById<ImageView>(R.id.imgProfil)
 
         val detecteur = GestureDetector(
@@ -180,9 +180,9 @@ class DashboardActivity : AppCompatActivity() {
 
                 override fun onDoubleTap(e: MotionEvent): Boolean {
                     AlertDialog.Builder(this@DashboardActivity)
-                        .setTitle("À propos de PrésenceManager")
+                        .setTitle("Ã€ propos de PrÃ©senceManager")
                         .setMessage(
-                            "Application de gestion des présences — Version 1.0"
+                            "Application de gestion des prÃ©sences â€” Version 1.0"
                         )
                         .setPositiveButton("OK", null)
                         .show()
@@ -197,23 +197,23 @@ class DashboardActivity : AppCompatActivity() {
             true
         }
 
-        // Étape 8 : clic sur Version 1.0
+        // Ã‰tape 8 : clic sur Version 1.0
         findViewById<TextView>(R.id.txtFooterDashboard)
             .setOnClickListener {
                 afficherInfosDeveloppeur()
             }
     }
 
-    // Informations du développeur
+    // Informations du dÃ©veloppeur
     private fun afficherInfosDeveloppeur() {
 
         val dialogue = AlertDialog.Builder(this)
-            .setTitle("Informations du développeur")
+            .setTitle("Informations du dÃ©veloppeur")
             .setMessage(
-                "Application : PrésenceManager\n" +
+                "Application : PrÃ©senceManager\n" +
                         "Version : 1.0\n" +
-                        "Développeur : NOM_PRENOM\n" +
-                        "GitHub : https://github.com/VOTRE_IDENTIFIANT/PresenceManager"
+                        "DÃ©veloppeur : Meryem ROKHSSI\n" +
+                        "GitHub : https://github.com/ROKHSSI-Meryem/PresenceManager_tp5"
             )
             .setPositiveButton("OK", null)
             .show()
@@ -224,3 +224,4 @@ class DashboardActivity : AppCompatActivity() {
         }
     }
 }
+
